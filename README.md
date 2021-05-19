@@ -1,11 +1,4 @@
 # Talajnedvesség mérő - DIY Arduino Blynk
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555]][https://www.linkedin.com/in/gergely-barna-hu/]
-
 Ebben a projektem összerakunk egy olcsó IoT talajnedvesség mérő kütyüt, ami méri egy növény földjének a nedvességtartalmát és értesítést küld, ha meg kéne locsolni.
 
 ## Mi az az IoT?
@@ -22,10 +15,13 @@ A Blynk-et használom az IoT projekteimhez, mert egyszerűbb alkalmazásokhoz te
 
 ## Kapcsolás
 Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappáiban.
+
 Röviden az arduino és a szenzor lábait így kell bekötnöd:
 
 3V    <----->   VCC
+
 GND   <----->   GND
+
 A0    <----->   AOUT
 
 ##Szenzor kalibrálása
