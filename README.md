@@ -1,1 +1,1 @@
-# Talajnedvesseg-mero-DIY-Arduino-Blynk2
+# Talajnedvesség mérő - DIY Arduino Blynk
