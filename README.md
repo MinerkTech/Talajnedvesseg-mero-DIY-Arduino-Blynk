@@ -16,13 +16,11 @@ A Blynk-et használom az IoT projekteimhez, mert egyszerűbb alkalmazásokhoz te
 ## Kapcsolás
 Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappáiban.
 
-Röviden az arduino és a szenzor lábait így kell bekötnöd:
+**<p>Röviden az Arduino és a szenzor lábait így kell bekötnöd:</p>**
 
-3V    <----->   VCC
-
-GND   <----->   GND
-
-A0    <----->   AOUT
+<p>3V    <----->   VCC</p>
+<p>GND   <----->   GND</p>
+<p>A0    <----->   AOUT</p>
 
 ## Szenzor kalibrálása
 Bármilyen szenzort is válassz meg kell adnod, mennyi a szenzor értéke, ha teljesen száraz a föld és mennyi, ha nagyon vizes. Ez szenzoronként és talajonként változó, ezért a legjobb eredmények érdekében a saját eszközöddel az általad használt tajaban érdemes elvégezned a kalibrációt. Erre két módszer létezik:
@@ -43,4 +41,4 @@ Bármilyen szenzort is válassz meg kell adnod, mennyi a szenzor értéke, ha te
 6. A program megfelelő változóiba (`airValue` - száraz érték, `waterValue` - vizes érték) beírod az általad mért értékeket és újra feltöltöd azt.
 
 
-Ez a projekt a The MIT License (MIT) alatt jelent meg. Bővebb információkat a 'LICENSE' fájlban találsz.
+Ez a projekt a The MIT License (MIT) alatt jelent meg. Bővebb információkat a `LICENSE` fájlban találsz.
