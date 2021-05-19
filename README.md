@@ -20,6 +20,13 @@ A legegyszerűbb és egyben **legolcsóbb** már pár száz forintért kapható 
 Egy valamivel drágább, de tartósabb megoldás, egy **kapacitív talajnedvesség mérő** vásárlása. Ez úgy néz ki mint egy kis fekete karó. Fém részei nem érintkeznek közvetlenül a talajjal, így sokkal **hosszabb élettartama**. Én ilyen szenzorokat használok és ezek vásárlását ajánlom mindenkinek, mivel hoszútávon ezek olcsóbbak és üzembiztosabbak.
 - Részletes leírás a kapacitív szenzorról: https://wiki.dfrobot.com/Capacitive_Soil_Moisture_Sensor_SKU_SEN0193
 
+## Amire szükség lesz:
+  - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
+  - Kapacitív talajnedvesség érzékelő
+  - Jumper kábelek
+  - Micro USB kábel és egy telefontöltő
+  - WiFi kapcsolat, internet
+
 ## Kapcsolás
 Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappáiban.
 <p align="center">
@@ -32,6 +39,10 @@ Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappá
 3V <-----> VCC
 <br>GND <-----> GND
 <br>A0 <-----> AOUT</p>
+
+## Szükséges könyvtárak:
+- Blynk könyvtár: https://github.com/blynkkk/blynk-library/releases/latest
+- ESP8266 könyvtárai: https://github.com/esp8266/Arduino
 
 ## Szenzor kalibrálása
 Bármilyen szenzort is válassz meg kell adnod, mennyi a szenzor értéke, ha teljesen száraz a föld és mennyi, ha nagyon vizes. Ez szenzoronként és talajonként változó, ezért a legjobb eredmények érdekében a saját eszközöddel az általad használt tajaban érdemes elvégezned a kalibrációt. Erre két módszer létezik:
@@ -51,5 +62,12 @@ Bármilyen szenzort is válassz meg kell adnod, mennyi a szenzor értéke, ha te
 5. Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke, majd felírod ezt az értéket is.
 6. A program megfelelő változóiba (`airValue` - száraz érték, `waterValue` - vizes érték) beírod az általad mért értékeket és újra feltöltöd azt.
 
+## Kapcsolat
+Ha érdekelnek hasonló projektek, látogass el oldalamra.
+- Weboldal: https://minerktech.blog.hu/
+- Youtube: https://www.youtube.com/c/MinerkTech
+- Facebook: https://www.facebook.com/minerktech
+- GitHub: https://github.com/MinerkTech
 
+## Licensz
 Ez a projekt a The MIT License (MIT) alatt jelent meg. Bővebb információkat a `LICENSE` fájlban találsz.
