@@ -9,7 +9,11 @@ A Blynk egy IoT platform, amellyel egyszerűen készíthetsz Arduino eszközökh
 A Blynk-et használom az IoT projekteimhez, mert egyszerűbb alkalmazásokhoz teljesen ingyenes és a könyvtára nagyon megkönnyíti az Arduino-k programozását.
 
 ## Mire lesz szükségem?
-
+  - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
+  - Kapacitív talajnedvesség érzékelő
+  - Jumper kábelek
+  - Micro USB kábel és egy telefontöltő
+  - WiFi kapcsolat, internet
 
 ### Milyen talaj nedvesség mérőt válasszak?
 Kétféle olcsó talajnedvesség mérő létezik, amit Arduino-hoz szoktak használni. Mindkettőhöz találsz programot a mappában, de jól gondold meg melyiket választod.
@@ -20,12 +24,6 @@ A legegyszerűbb és egyben **legolcsóbb** már pár száz forintért kapható 
 Egy valamivel drágább, de tartósabb megoldás, egy **kapacitív talajnedvesség mérő** vásárlása. Ez úgy néz ki mint egy kis fekete karó. Fém részei nem érintkeznek közvetlenül a talajjal, így sokkal **hosszabb élettartama**. Én ilyen szenzorokat használok és ezek vásárlását ajánlom mindenkinek, mivel hoszútávon ezek olcsóbbak és üzembiztosabbak.
 - Részletes leírás a kapacitív szenzorról: https://wiki.dfrobot.com/Capacitive_Soil_Moisture_Sensor_SKU_SEN0193
 
-## Amire szükség lesz:
-  - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
-  - Kapacitív talajnedvesség érzékelő
-  - Jumper kábelek
-  - Micro USB kábel és egy telefontöltő
-  - WiFi kapcsolat, internet
 
 ## Kapcsolás
 Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappáiban.
