@@ -18,6 +18,7 @@ Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappá
 <p align="center">
   <img src="https://github.com/MinerkTech/Talajnedvesseg-mero-DIY-Arduino-Blynk/blob/main/Kapacitiv-szenzor/NodeMCU-Kapacitiv-szenzor-Kapcsolas.png" height="800" title="Példa kapcsolás">
 </p>
+
 **<p>Röviden az Arduino és a szenzor lábait így kell bekötnöd:</p>**
 
 <p align="center">
