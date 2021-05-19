@@ -51,7 +51,7 @@ Ha érdekelnek hasonló projektek, látogass el oldalamra.
 /* BEÁLLÍTÁSOK */
 /* <<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>> */
 
-// Állítsd be az Auth Token-t (Azonosító kulcs)
+// Állítsd be az Auth Token-t (azonosító kulcs)
 // A Blynk APP-ban a beállítások (anyacsavar ikon) alatt tudod létrehozni
 char auth[] = "AuthToken-ed";
 
