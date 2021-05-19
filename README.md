@@ -10,7 +10,7 @@ A Blynk-et használom az IoT projekteimhez, mert egyszerűbb alkalmazásokhoz te
 
 ## Mire lesz szükségem?
   - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
-  - Kapacitív talajnedvesség érzékelő
+  - Talajnedvesség érzékelő
   - Jumper kábelek
   - Micro USB kábel és egy telefontöltő
   - WiFi kapcsolat, internet
