@@ -24,23 +24,23 @@ GND   <----->   GND
 
 A0    <----->   AOUT
 
-##Szenzor kalibrálása
+## Szenzor kalibrálása
 Bármilyen szenzort is válassz meg kell adnod, mennyi a szenzor értéke, ha teljesen száraz a föld és mennyi, ha nagyon vizes. Ez szenzoronként és talajonként változó, ezért a legjobb eredmények érdekében a saját eszközöddel az általad használt tajaban érdemes elvégezned a kalibrációt. Erre két módszer létezik:
 
-Pontatlan, de gyors
-Feltöltöd a szükséges programot.
-Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke szárazon, a talajon kívül. Felírod ezt az értéket.
-Vízbe rakod a szenzort, úgy hogy az előírt szintig ellepje azt.
-Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke vízben, majd felírod ezt az értéket is.
-A program megfelelő változóiba beírod az általad mért értékeket és újra feltöltöd azt.
+### Pontatlan, de gyors
+1. Feltöltöd a szükséges programot.
+2. Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke szárazon, a talajon kívül. Felírod ezt az értéket.
+3. Vízbe rakod a szenzort, úgy hogy az előírt szintig ellepje azt.
+4. Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke vízben, majd felírod ezt az értéket is.
+5. A program megfelelő változóiba ('airValue' - száraz érték, 'waterValue' - vizes érték) beírod az általad mért értékeket és újra feltöltöd azt.
 
-Pontos, de időigényesebb
-Feltöltöd a szükséges programot.
-Teljesen száraz talajba rakod a szenzort, úgy hogy az előírt szintig föld alatt legyen.
-Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke, majd felírod ezt az értéket.
-Meglocsolod a talajt, amennyire csak lehetséges.
-Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke, majd felírod ezt az értéket is.
-A program megfelelő változóiba beírod az általad mért értékeket és újra feltöltöd azt.
+### Pontos, de időigényesebb
+1. Feltöltöd a szükséges programot.
+2. Teljesen száraz talajba rakod a szenzort, úgy hogy az előírt szintig föld alatt legyen.
+3. Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke, majd felírod ezt az értéket.
+4. Meglocsolod a talajt, amennyire csak lehetséges.
+5. Soros porton vagy az alkalmazásban figyeled pár percig mennyi a szenzor értéke, majd felírod ezt az értéket is.
+6. A program megfelelő változóiba ('airValue' - száraz érték, 'waterValue' - vizes érték) beírod az általad mért értékeket és újra feltöltöd azt.
 
 
-Ez a projekt a The MIT License (MIT) alatt jelent meg.
+Ez a projekt a The MIT License (MIT) alatt jelent meg. Bővebb információkat a 'LICENSE' fájlban találsz.
