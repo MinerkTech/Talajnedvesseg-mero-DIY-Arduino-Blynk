@@ -4,7 +4,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555]][https://www.linkedin.com/in/gergely-barna-hu/]
 
 Ebben a projektem összerakunk egy olcsó IoT talajnedvesség mérő kütyüt, ami méri egy növény földjének a nedvességtartalmát és értesítést küld, ha meg kéne locsolni.
 
