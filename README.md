@@ -1,7 +1,14 @@
 # Talajnedvesség mérő - DIY Arduino Blynk
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 Ebben a projektem összerakunk egy olcsó IoT talajnedvesség mérő kütyüt, ami méri egy növény földjének a nedvességtartalmát és értesítést küld, ha meg kéne locsolni.
 
-## Mi az IoT?
+## Mi az az IoT?
 
 
 ## Mi az a Blynk?
