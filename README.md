@@ -18,9 +18,10 @@ Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappá
 
 **<p>Röviden az Arduino és a szenzor lábait így kell bekötnöd:</p>**
 
-<p align="center">3V    <----->   VCC
-<br>GND   <----->   GND
-<br>A0    <----->   AOUT</p>
+<p align="center">
+<br>3V <-----> VCC
+<br>GND <-----> GND
+<br>A0 <-----> AOUT</p>
 
 ## Szenzor kalibrálása
 Bármilyen szenzort is válassz meg kell adnod, mennyi a szenzor értéke, ha teljesen száraz a föld és mennyi, ha nagyon vizes. Ez szenzoronként és talajonként változó, ezért a legjobb eredmények érdekében a saját eszközöddel az általad használt tajaban érdemes elvégezned a kalibrációt. Erre két módszer létezik:
