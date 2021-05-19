@@ -18,8 +18,8 @@ Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappá
 
 **<p>Röviden az Arduino és a szenzor lábait így kell bekötnöd:</p>**
 
-<p>3V    <----->   VCC
-<br>GND   <----->   GND<
+<p align="center">3V    <----->   VCC
+<br>GND   <----->   GND
 <br>A0    <----->   AOUT</p>
 
 ## Szenzor kalibrálása
