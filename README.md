@@ -15,7 +15,10 @@ A Blynk-et használom az IoT projekteimhez, mert egyszerűbb alkalmazásokhoz te
 
 ## Kapcsolás
 Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappáiban.
-![Példa kapcsolás](https://github.com/MinerkTech/Talajnedvesseg-mero-DIY-Arduino-Blynk/blob/main/Kapacitiv-szenzor/NodeMCU-Kapacitiv-szenzor-Kapcsolas.png)
+<p align="center">
+  <img src="https://github.com/MinerkTech/Talajnedvesseg-mero-DIY-Arduino-Blynk/blob/main/Kapacitiv-szenzor/NodeMCU-Kapacitiv-szenzor-Kapcsolas.png" width="350" title="hover text">
+  <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
+</p>
 **<p>Röviden az Arduino és a szenzor lábait így kell bekötnöd:</p>**
 
 <p align="center">
