@@ -41,7 +41,7 @@ Ha érdekelnek hasonló projektek, látogass el oldalamra.
 *********************************************************************/
 
 
-/* Comment this out to disable prints and save space */
+/* Tedd ezt megjegyzéssé, a prints letiltásához és hely felszabadításához*/
 #define BLYNK_PRINT Serial
 
 #include <ESP8266WiFi.h>
@@ -51,17 +51,17 @@ Ha érdekelnek hasonló projektek, látogass el oldalamra.
 /* BEÁLLÍTÁSOK */
 /* <<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>> */
 
-// You should get Auth Token in the Blynk App.
-// Go to the Project Settings (nut icon).
-char auth[] = "YourAuthToken";
+// Állítsd be az Auth Token-t (Azonosító kulcs)
+// A Blynk APP-ban a beállítások (anyacsavar ikon) alatt tudod létrehozni
+char auth[] = "AuthToken-ed";
 
 // A Wifi hálózatod adatai
 // Állítsd a jelszót ""-ra, ha nincs jelszava
 char ssid[] = "HálózatNeve";
 char pass[] = "HálózatJelszava";
 
-const int airValue = 630;     // Cseréld ki ezt az értéket a száraz szenzorral mért nyers értékre
-const int waterValue = 275;   // Cseréld ki ezt az értéket a vízben lévő szenzorral mért nyers értékre
+const int airValue = 630;     // Cseréld ki ezt a teljesen száraz talajban mért nyers értékre
+const int waterValue = 275;   // Cseréld ki ezt a nagyon vízes talajban mért nyers értékre
 
 const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 1000L    = 1 másodperc
@@ -71,8 +71,8 @@ const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 3600000L = 1 óra
                                      
 
-#define percentPin 1        // A virtuális pin száma (V1), ahol a nedvesség százalékban van elküldve
-#define sensorvaluePin 2    // A virtuális pin száma (V2), ahol a nyers mért érték van megadva
+#define percentPin 1        // A Blynk virtuális pin száma (V1), ahol a nedvesség százalékban van elküldve
+#define sensorvaluePin 2    // A Blynk virtuális pin száma (V2), ahol a nyers mért érték van elküldve
 
 /* <<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>><<¤>> */
 
@@ -113,7 +113,7 @@ void setup() {
   Serial.begin(9600);
 
   Blynk.begin(auth, ssid, pass);
-  // You can also specify server:
+  // Beállíthatsz más szervert is:
   //Blynk.begin(auth, ssid, pass, "blynk-cloud.com", 80);
   //Blynk.begin(auth, ssid, pass, IPAddress(192,168,1,100), 8080);
 
