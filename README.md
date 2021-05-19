@@ -15,11 +15,10 @@ A Blynk-et használom az IoT projekteimhez, mert egyszerűbb alkalmazásokhoz te
 
 ## Kapcsolás
 Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappáiban.
-
 **<p>Röviden az Arduino és a szenzor lábait így kell bekötnöd:</p>**
 
 <p align="center">
-<br>3V <-----> VCC
+3V <-----> VCC
 <br>GND <-----> GND
 <br>A0 <-----> AOUT</p>
 
