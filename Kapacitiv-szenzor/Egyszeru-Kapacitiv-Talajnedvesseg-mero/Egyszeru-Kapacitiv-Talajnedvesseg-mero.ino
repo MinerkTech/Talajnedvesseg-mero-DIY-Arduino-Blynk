@@ -20,11 +20,12 @@ Kapcsolás:
     GND   <----->   GND
     A0    <----->   AOUT
 
-        https://github.com/esp8266/Arduino
-  - Blynk könyvtár:
 Szükséges könyvtárak:
-  - ESP8266 könyvtárai:
+        
+  - Blynk könyvtár:
         https://github.com/blynkkk/blynk-library/releases/latest
+  - ESP8266 könyvtárai:
+        https://github.com/esp8266/Arduino
 
 
 Blynk alkalmazás beállításai:
