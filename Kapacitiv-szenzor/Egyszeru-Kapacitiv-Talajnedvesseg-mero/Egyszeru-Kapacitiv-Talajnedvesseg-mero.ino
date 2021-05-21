@@ -1,11 +1,11 @@
 /*********************************************************************
+
 Ez a program megadott időközönként mér egy kapacitív 
 talajnedvesség mérővel és feltölti az adatokat Blynk-re.
 
 A projekt részletes bemutatóját itt találod:
       Még készül
-
-Licensz: MIT License
+      
 **********************************************************************
 
 Amire szükség lesz:
@@ -20,8 +20,7 @@ Kapcsolás:
     GND   <----->   GND
     A0    <----->   AOUT
 
-Szükséges könyvtárak:
-        
+Szükséges könyvtárak:     
   - Blynk könyvtár:
         https://github.com/blynkkk/blynk-library/releases/latest
   - ESP8266 könyvtárai:
@@ -39,6 +38,7 @@ Ha érdekelnek hasonló projektek, látogass el oldalamra.
     - Facebook: https://www.facebook.com/minerktech
     - GitHub: https://github.com/MinerkTech
 
+Licensz: MIT License
 *********************************************************************/
 
 
