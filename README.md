@@ -3,7 +3,7 @@ Ebben a projektem összerakunk egy olcsó IoT talajnedvesség mérő kütyüt, a
 
 Ez a Repository ennek a videónak a kiegészítője: Még készül
 
-Teszt
+
 ## Mi az az IoT?
 
 
