@@ -1,7 +1,8 @@
 /*********************************************************************
 
-Ez a program megadott időközönként mér egy kapacitív 
-talajnedvesség mérővel és feltölti az adatokat Blynk-re.
+Ez a program megadott időközönként mér egy  
+talajnedvesség mérővel, feltölti az adatokat Blynk-re és
+értesítést küld ha kiszáradt a talaj.
 
 A projekt részletes bemutatóját itt találod:
       Még készül
@@ -10,7 +11,7 @@ A projekt részletes bemutatóját itt találod:
 
 Amire szükség lesz:
   - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
-  - Kapacitív talajnedvesség érzékelő
+  - FC-28 vagy bármilyen hasonló egyszerű talajnedvesség érzékelő
   - Jumper kábelek
   - Micro USB kábel és egy telefontöltő
   - WiFi kapcsolat, internet
@@ -34,6 +35,7 @@ Blynk alkalmazás beállításai:
   Az alkalmazásban a Display Widget-ek beállításainál a READING RATE-t
   (olvasási gyakoriság) állítsd PUSH-ra. Ezzel az Arduino-n futó
   program szabja meg milyen gyakran küld be adatot.
+
 
 Ha érdekelnek hasonló projektek, látogass el oldalamra.
     - Weboldal: https://minerktech.blog.hu/
@@ -64,8 +66,10 @@ char auth[] = "AuthToken-ed";
 char ssid[] = "HálózatNeve";
 char pass[] = "HálózatJelszava";
 
-const int dryValue = 650;     // Cseréld ki ezt a teljesen száraz talajban mért nyers értékre
-const int waterValue = 275;   // Cseréld ki ezt a nagyon vízes talajban mért nyers értékre
+const int dryValue = 1024;     // Cseréld ki ezt a teljesen száraz talajban mért nyers értékre
+const int waterValue = 220;   // Cseréld ki ezt a nagyon vízes talajban mért nyers értékre
+
+const string notification = "Locsold meg a növényed!";
 
 const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 1000L    = 1 másodperc
@@ -74,6 +78,15 @@ const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 600000L  = 10 perc
                                       // 3600000L = 1 óra
                                      
+const long notifyInterval = 60000L;   // Értesítések közötti időköz milliszekundumban
+                                      // 60000L   = 1 perc
+                                      // 600000L  = 10 perc
+                                      // 3600000L = 1 óra
+                                      // 7200000L = 2 óra
+                                      // Minimum 5 másodpercnek el kell telnie két értesítés között
+
+
+#define sensorPower D1     // A digitális pin, amiről a szenzor kapja az áramot
 
 #define percentPin 1        // A Blynk virtuális pin száma (V1), ahol a nedvesség százalékban van elküldve
 #define sensorvaluePin 2    // A Blynk virtuális pin száma (V2), ahol a nyers mért érték van elküldve
@@ -91,25 +104,42 @@ BlynkTimer timer;
 
 
 // Ez a fügvény méri a talajnedvességet és küldi el az adatokat a Blynk-nek
-// In the app, Widget's reading frequency should be set to PUSH. This means
-// that you define how often to send data to Blynk App.
 void sendSensor() {
   
-  // Mérés
+  // Talajnedvesség mérő bekapcsolása
+  digitalWrite(sensorPower, HIGH);
+  delay(10); // Várakozás, hogy bekapcsoljon a szenzor
+  
+  //Mérés és adat átalakítás
   soilMoistureValue = analogRead(sensorPin);
     Serial.println("");
     Serial.print("Nyers adat: ");
     Serial.println(soilMoistureValue);
 
-  // Adatok átalakítása
   soilMoisturePercent = map(soilMoistureValue, dryValue, waterValue, 0, 100);
     Serial.print("Talajnedvesség: ");
     Serial.print(soilMoisturePercent);
     Serial.println("%");
 
+  digitalWrite(sensorPower, LOW); // Szenzor kikapcsolása
+
   // Adatok küldése Blynk-re
   Blynk.virtualWrite(percentPin, soilMoisturePercent);
   Blynk.virtualWrite(sensorvaluePin, soilMoistureValue);
+}
+
+
+
+// Értesítés küldése
+void notifyWatering() {
+
+  if (soilMoistureValue > wateringLevel)
+  {
+    Serial.println("");
+    Serial.print("Értesítés: ");
+    Serial.println(notification);
+
+    Blynk.notify(notification);
 }
 
 
@@ -124,8 +154,14 @@ void setup() {
   //Blynk.begin(auth, ssid, pass, "blynk-cloud.com", 80);
   //Blynk.begin(auth, ssid, pass, IPAddress(192,168,1,100), 8080);
 
+  pinMode(sensorPower, OUTPUT);     // A digitális pin kimenetre történő állítása
+  digitalWrite(sensorPower, LOW);
+
   // Mérés és adatok elküldése 'messureInterval' időközönként
   timer.setInterval(messureInterval, sendSensor);
+
+  // Adatok elemzése 'notifyInterval' indőközönként és értesítés küldése
+  timer.setInterval(notifyInterval, notifyWatering);
 }
 
 

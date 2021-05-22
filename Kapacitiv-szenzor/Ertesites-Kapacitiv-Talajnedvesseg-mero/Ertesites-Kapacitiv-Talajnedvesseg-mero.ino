@@ -1,7 +1,8 @@
 /*********************************************************************
 
 Ez a program megadott időközönként mér egy kapacitív 
-talajnedvesség mérővel és feltölti az adatokat Blynk-re.
+talajnedvesség mérővel, feltölti az adatokat Blynk-re és
+értesítést küld, ha kiszáradt a talaj.
 
 A projekt részletes bemutatóját itt találod:
       Még készül
@@ -64,8 +65,12 @@ char auth[] = "AuthToken-ed";
 char ssid[] = "HálózatNeve";
 char pass[] = "HálózatJelszava";
 
-const int dryValue = 650;     // Cseréld ki ezt a teljesen száraz talajban mért nyers értékre
-const int waterValue = 275;   // Cseréld ki ezt a nagyon vízes talajban mért nyers értékre
+const int dryValue = 650;       // Cseréld ki ezt a teljesen száraz talajban mért nyers értékre
+const int waterValue = 275;     // Cseréld ki ezt a nagyon vízes talajban mért nyers értékre
+
+const int wateringLevel = 500;  //Cseréld ki ezt arra a nyers értékre, amikor locsolni kellene
+
+const string notification = "Locsold meg a növényed!";
 
 const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 1000L    = 1 másodperc
@@ -73,7 +78,15 @@ const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 60000L   = 1 perc
                                       // 600000L  = 10 perc
                                       // 3600000L = 1 óra
-                                     
+                                      // Másodpercenként max 10 adat küldhető be
+
+const long notifyInterval = 60000L;   // Értesítések közötti időköz milliszekundumban
+                                      // 60000L   = 1 perc
+                                      // 600000L  = 10 perc
+                                      // 3600000L = 1 óra
+                                      // 7200000L = 2 óra
+                                      // Minimum 5 másodpercnek el kell telnie két értesítés között
+                                                                          
 
 #define percentPin 1        // A Blynk virtuális pin száma (V1), ahol a nedvesség százalékban van elküldve
 #define sensorvaluePin 2    // A Blynk virtuális pin száma (V2), ahol a nyers mért érték van elküldve
@@ -95,21 +108,37 @@ BlynkTimer timer;
 // that you define how often to send data to Blynk App.
 void sendSensor() {
   
-  // Mérés
+  //Mérés és adat átalakítás
   soilMoistureValue = analogRead(sensorPin);
     Serial.println("");
     Serial.print("Nyers adat: ");
     Serial.println(soilMoistureValue);
 
-  // Adatok átalakítása
   soilMoisturePercent = map(soilMoistureValue, dryValue, waterValue, 0, 100);
-    Serial.print("Talajnedvesség: ");
-    Serial.print(soilMoisturePercent);
-    Serial.println("%");
+    Serial.print("Talajnedvesség százalékban: ");
+    Serial.println(soilMoisturePercent);
 
   // Adatok küldése Blynk-re
   Blynk.virtualWrite(percentPin, soilMoisturePercent);
   Blynk.virtualWrite(sensorvaluePin, soilMoistureValue);
+}
+
+
+
+void notifyWatering() {
+  // Actually send the message.
+  // Note:
+  // We allow 1 notification per 5 seconds for now.
+  if (soilMoistureValue > wateringLevel)
+  {
+    Serial.println("");
+    Serial.print("Értesítés: ");
+    Serial.println(notification);
+
+    Blynk.notify(notification);
+    // You can also use {DEVICE_NAME} placeholder for device name,
+    // that will be replaced by your device name on the server side.
+  }
 }
 
 
@@ -126,6 +155,9 @@ void setup() {
 
   // Mérés és adatok elküldése 'messureInterval' időközönként
   timer.setInterval(messureInterval, sendSensor);
+
+  // Adatok elemzése 'notifyInterval' indőközönként és értesítés küldése
+  timer.setInterval(notifyInterval, notifyWatering);
 }
 
 
