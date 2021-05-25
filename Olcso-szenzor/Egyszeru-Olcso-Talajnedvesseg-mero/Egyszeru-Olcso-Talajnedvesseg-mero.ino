@@ -10,7 +10,7 @@ A projekt részletes bemutatóját itt találod:
 
 Amire szükség lesz:
   - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
-  - FC-28 vagy bármilyen hasonló egyszerű talajnedvesség érzékelő
+  - FC-28, YL-69, HL-69 vagy bármilyen hasonló egyszerű talajnedvesség érzékelő
   - Jumper kábelek
   - Micro USB kábel és egy telefontöltő
   - WiFi kapcsolat, internet
