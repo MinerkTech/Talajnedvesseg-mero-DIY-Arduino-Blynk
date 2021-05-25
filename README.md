@@ -20,7 +20,7 @@ A Blynk-et használom az IoT projekteimhez, mert egyszerűbb alkalmazásokhoz te
 ### Milyen talaj nedvesség mérőt válasszak?
 Kétféle olcsó talajnedvesség mérő létezik, amit Arduino-hoz szoktak használni. Mindkettőhöz találsz programot a mappákban, de jól gondold meg melyiket választod.
 
-A legegyszerűbb és egyben **legolcsóbb** már pár száz forintért kapható szenzort, sokszor név és márkajelzés nélkül forgalmazzák nagy tételben, mivel olyan olcsó és olyan **rövid az élettartama**. Onnan lehet felismerni, hogy két lábán kívülről van egy fém bevonat. Senkinek nem ajánlom ilyen szenzor vásárlását, mivel használattól függően pár hét alatt elrozsdál a fém bevonat a szenzoron és elromlik.
+A legegyszerűbb és egyben **legolcsóbb** már pár száz forintért kapható szenzort, sokszor név és márkajelzés nélkül forgalmazzák nagy tételben, mivel olyan olcsó és olyan **rövid az élettartama**. Onnan lehet felismerni, hogy két lábán kívülről van egy fém bevonat. Senkinek nem ajánlom ilyen szenzor vásárlását, mivel használattól függően pár hét vagy pár hónap alatt elrozsdál a fém bevonat és elromlik.
 - Részletes leírás az olcsó szenzorról: https://lastminuteengineers.com/soil-moisture-sensor-arduino-tutorial/ 
 
 Egy valamivel drágább, de tartósabb megoldás, egy **kapacitív talajnedvesség mérő** vásárlása. Ez úgy néz ki mint egy kis fekete karó. Fém részei nem érintkeznek közvetlenül a talajjal, így sokkal **hosszabb élettartama**. Én ilyen szenzorokat használok és ezek vásárlását ajánlom mindenkinek, mivel hoszútávon ezek olcsóbbak és üzembiztosabbak.
