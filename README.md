@@ -30,7 +30,7 @@ Egy valamivel drágább, de tartósabb megoldás, egy **kapacitív talajnedvess�
 ## Kapcsolás
 Az áramkör ábráját, amit össze kell raknod, megtalálod a szenzorok mappáiban.
 <p align="center">
-  <img src="https://github.com/MinerkTech/Talajnedvesseg-mero-DIY-Arduino-Blynk/blob/Beta/Kapacitiv-szenzor/WemosD1-Kapacitiv-szenzor-kapcsolas.png" height="800" title="Példa kapcsolás">
+  <img src="https://github.com/MinerkTech/Talajnedvesseg-mero-DIY-Arduino-Blynk/blob/Beta/Kapacitiv-szenzor/WemosD1-Kapacitiv-szenzor-kapcsolas.png" weight="640" title="Példa kapcsolás">
 </p>
 
 **<p>Az Arduino és a szenzor lábait így kell bekötnöd:</p>**
