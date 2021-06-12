@@ -13,13 +13,13 @@ Amire szükség lesz:
   - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
   - FC-28 vagy bármilyen hasonló egyszerű talajnedvesség érzékelő
   - Jumper kábelek
-  - Micro USB kábel és egy telefontöltő
+  - Micro USB kábel és egy telefon töltő
   - WiFi kapcsolat, internet
 
 Kapcsolás:
-    3V    <----->   VCC
+    D1    <----->   VCC
     GND   <----->   GND
-    A0    <----->   AOUT
+    A0    <----->   A0
 
 Szükséges könyvtárak:     
   - Blynk könyvtár:

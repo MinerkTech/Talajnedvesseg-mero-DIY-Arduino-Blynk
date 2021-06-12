@@ -12,13 +12,13 @@ Amire szükség lesz:
   - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
   - FC-28 vagy bármilyen hasonló egyszerű talajnedvesség érzékelő
   - Jumper kábelek
-  - Micro USB kábel és egy telefontöltő
+  - Micro USB kábel és egy telefon töltő
   - WiFi kapcsolat, internet
 
 Kapcsolás:
-    3V    <----->   VCC
+    D1    <----->   VCC
     GND   <----->   GND
-    A0    <----->   AOUT
+    A0    <----->   A0
 
 Szükséges könyvtárak:     
   - Blynk könyvtár:
@@ -93,20 +93,19 @@ BlynkTimer timer;
 
 
 // Ez a fügvény méri a talajnedvességet és küldi el az adatokat a Blynk-nek
-// In the app, Widget's reading frequency should be set to PUSH. This means
-// that you define how often to send data to Blynk App.
 void sendSensor() {
   
   // Talajnedvesség mérő bekapcsolása
   digitalWrite(sensorPower, HIGH);
-  delay(10); // Várakozás, hogy bekapcsoljon a szenzor
+  delay(10);      // Várakozás, hogy bekapcsoljon a szenzor
   
-  //Mérés és adat átalakítás
+  // Mérés
   soilMoistureValue = analogRead(sensorPin);
     Serial.println("");
     Serial.print("Nyers adat: ");
     Serial.println(soilMoistureValue);
 
+  // Adat átalakítás
   soilMoisturePercent = map(soilMoistureValue, dryValue, waterValue, 0, 100);
     Serial.print("Talajnedvesség: ");
     Serial.print(soilMoisturePercent);
