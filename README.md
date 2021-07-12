@@ -1,10 +1,10 @@
 # Talajnedvesség mérő - DIY Arduino Blynk
-Ebben a projektem összerakunk egy olcsó IoT talajnedvesség mérő kütyüt, ami méri egy növény földjének a nedvességtartalmát és értesítést küld, ha meg kéne locsolni.
+Ebben a projektem összerakunk egy olcsó IoT Arduino és Blynk alapú talajnedvesség mérő kütyüt, ami méri egy növény földjének a nedvességtartalmát és értesítést küld egy okostelefonra, ha meg kéne locsolni.
 
 Ebben a videóban beszélek bővebben erről a projektről: Még készül
 
 ## Mi az az IoT?
-Internet of Things magyarul dolgok internete, olyan „intelligens” eszközöket takar, melyek képesek kommunikálni egy hálózaton, szenzorok segítségével adatokat gyűjteni és akár vezérelni más rendszereket. Ilyenek vezérlik az okos otthonokat (okos kapcsoló, okos izzó, okos termosztát, stb.) és egy ilyen eszközt fogunk építeni ebben a projektben is.
+Internet of Things magyarul dolgok internete, olyan „intelligens” eszközöket takar, melyek képesek kommunikálni egy hálózaton, szenzorok segítségével mérni és akár vezérelni más rendszereket. Ilyenek vezérlik az okos otthonokat (okos kapcsoló, okos izzó, okos termosztát, stb.) és egy ilyen eszközt fogunk építeni ebben a projektben is.
 
 ## Mi az a Blynk?
 A Blynk egy IoT platform, amellyel egyszerűen készíthetsz Arduino eszközökhöz telefonos APP-ot. Fel lehet rá tölteni adatokat, amiket aztán egy mobil alkalmazásban meg lehet nézni, de akár eszköz vezérlésre vagy automatizálásra is alkalmas.
