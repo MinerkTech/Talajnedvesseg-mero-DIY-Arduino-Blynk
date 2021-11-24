@@ -1,7 +1,8 @@
 /*********************************************************************
 
 Ez a program megadott időközönként mér egy  
-talajnedvesség mérővel és feltölti az adatokat Blynk-re.
+talajnedvesség mérővel, feltölti az adatokat Blynk-re és
+értesítést küld ha kiszáradt a talaj.
 
 A projekt részletes bemutatóját itt találod:
       Még készül
@@ -10,7 +11,7 @@ A projekt részletes bemutatóját itt találod:
 
 Amire szükség lesz:
   - NodeMCU, Wemos D1 Mini vagy bármely ESP8266 alapú mikroszámítógép
-  - FC-28, YL-69, HL-69 vagy bármilyen hasonló egyszerű talajnedvesség érzékelő
+  - SA-27, FC-28, YL-69, HL-69 vagy bármilyen hasonló egyszerű talajnedvesség érzékelő
   - Jumper kábelek
   - Micro USB kábel és egy telefon töltő
   - WiFi kapcsolat, internet
@@ -68,6 +69,8 @@ char pass[] = "HálózatJelszava";
 const int dryValue = 1024;     // Cseréld ki ezt a teljesen száraz talajban mért nyers értékre
 const int waterValue = 220;   // Cseréld ki ezt a nagyon vízes talajban mért nyers értékre
 
+const string notification = "Locsold meg a növényed!";
+
 const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 1000L    = 1 másodperc
                                       // 10000L   = 10 másodperc
@@ -75,6 +78,14 @@ const long messureInterval = 1000L;   // Mérési időköz milliszekundumban
                                       // 600000L  = 10 perc
                                       // 3600000L = 1 óra
                                      
+const long notifyInterval = 60000L;   // Értesítések közötti időköz milliszekundumban
+                                      // 60000L   = 1 perc
+                                      // 600000L  = 10 perc
+                                      // 3600000L = 1 óra
+                                      // 7200000L = 2 óra
+                                      // Minimum 5 másodpercnek el kell telnie két értesítés között
+
+
 #define sensorPower D1     // A digitális pin, amiről a szenzor kapja az áramot
 
 #define percentPin 1        // A Blynk virtuális pin száma (V1), ahol a nedvesség százalékban van elküldve
@@ -97,15 +108,14 @@ void sendSensor() {
   
   // Talajnedvesség mérő bekapcsolása
   digitalWrite(sensorPower, HIGH);
-  delay(10);      // Várakozás, hogy bekapcsoljon a szenzor
+  delay(10); // Várakozás, hogy bekapcsoljon a szenzor
   
-  // Mérés
+  //Mérés és adat átalakítás
   soilMoistureValue = analogRead(sensorPin);
     Serial.println("");
     Serial.print("Nyers adat: ");
     Serial.println(soilMoistureValue);
 
-  // Adat átalakítás
   soilMoisturePercent = map(soilMoistureValue, dryValue, waterValue, 0, 100);
     Serial.print("Talajnedvesség: ");
     Serial.print(soilMoisturePercent);
@@ -116,6 +126,20 @@ void sendSensor() {
   // Adatok küldése Blynk-re
   Blynk.virtualWrite(percentPin, soilMoisturePercent);
   Blynk.virtualWrite(sensorvaluePin, soilMoistureValue);
+}
+
+
+
+// Értesítés küldése
+void notifyWatering() {
+
+  if (soilMoistureValue > wateringLevel)
+  {
+    Serial.println("");
+    Serial.print("Értesítés: ");
+    Serial.println(notification);
+
+    Blynk.notify(notification);
 }
 
 
@@ -135,6 +159,9 @@ void setup() {
 
   // Mérés és adatok elküldése 'messureInterval' időközönként
   timer.setInterval(messureInterval, sendSensor);
+
+  // Adatok elemzése 'notifyInterval' indőközönként és értesítés küldése
+  timer.setInterval(notifyInterval, notifyWatering);
 }
 
 
